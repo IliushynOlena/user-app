@@ -1,25 +1,32 @@
-import logo from './logo.svg';
+
 import './App.css';
 
-function App() {
+import { Timer } from "./components/Timer";
+import UserCard from "./components/UserCard";
+import { UserList } from "./components/UserList";
+
+
+const USERS = [
+  { id:1, name: "Vlad", address: "Rivne", position: "Teacher" },
+  { id:2,name: "Olga", address: "Kyiv", position: "Manager" },
+  { id:3,name: "Katya", address: "Lviv", position: "Lead" },
+];
+
+// functional component
+export default function App(/* parameters */) {
+  // ... code ...
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Hello CodeSandbox</h1>
+      <h2>Start editing to see some magic happen!</h2>
+      <p>Hello React!</p>
+      {/* <UserCard name="Vlad" address="Rivne" position="Teacher" />
+      <UserCard name="Olga" address="Kyiv" position="Manager" />
+      <UserCard name="Katya" address="Lviv" position="Lead" /> */}
+      <UserList users={USERS} />
+
+      <Timer start="30" />
     </div>
   );
 }
-
-export default App;
